@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tektronix Due Diligence Pilot — Messaging Consent and Use Case</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #132033;
+      --muted: #4e5d78;
+      --border: #dbe2ee;
+      --accent: #0b57d0;
+      --ok: #14532d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+    .hero, .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 24px rgba(19,32,51,0.05);
+    }
+    h1, h2, h3 { line-height: 1.2; margin-top: 0; }
+    h1 { font-size: 2rem; margin-bottom: 10px; }
+    h2 { font-size: 1.25rem; margin-bottom: 10px; }
+    p, li { color: var(--muted); }
+    code {
+      background: #eef3ff;
+      color: #0a2f7a;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    a { color: var(--accent); }
+    .badge {
+      display: inline-block;
+      font-size: 0.9rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eaf2ff;
+      color: #143d8f;
+      margin-bottom: 12px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+    }
+    .mini {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fcfdff;
+    }
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: #f5f9ff;
+      padding: 14px 16px;
+      border-radius: 10px;
+    }
+    .success {
+      border-left-color: #15803d;
+      background: #f0fdf4;
+    }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge">Twilio Toll-Free Verification Support Page</div>
+      <h1>Tektronix Due Diligence Pilot — Consent and Messaging Use Case</h1>
+      <p><strong>Last updated:</strong> 2026-04-18</p>
+      <p>This page documents the messaging use case, consent model, and compliance posture for a private technical due diligence pilot. It is intended to support toll-free SMS verification and carrier review for a low-volume, authorized-user workflow.</p>
+    </section>
+
+    <section class="card">
+      <h2>Business and pilot summary</h2>
+      <div class="grid">
+        <div class="mini">
+          <h3>Program</h3>
+          <p>Tektronix Due Diligence Pilot</p>
+        </div>
+        <div class="mini">
+          <h3>Volume</h3>
+          <p>Low volume pilot, approximately <code>100</code> messages per month or fewer.</p>
+        </div>
+        <div class="mini">
+          <h3>Audience</h3>
+          <p>Only pre-authorized internal pilot users. No public enrollment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Messaging use case</h2>
+      <p>This toll-free number is used for a private pilot workflow for technical due diligence request intake. An authorized internal pilot user sends a short request message, such as <code>report nvidia santa clara ae</code>. The system accepts the request only if the sender phone number matches an active allowlisted contact. Unknown or inactive phone numbers are rejected automatically before any request is processed.</p>
+      <div class="callout">
+        <strong>Not a marketing program.</strong>
+        <p>This workflow is not used for promotions, lead generation, cold outreach, bulk campaigns, or purchased-contact messaging.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Consent / opt-in model</h2>
+      <p>Consent is collected through a manual, administrator-managed internal pilot enrollment process.</p>
+      <ul>
+        <li>Users are added individually by an administrator before messaging is allowed.</li>
+        <li>Only known, approved pilot users may send messages to the number.</li>
+        <li>The sender phone number must match the approved contact record exactly.</li>
+        <li>There is no public keyword-based signup, no website signup form, and no mass opt-in list.</li>
+      </ul>
+      <div class="callout success">
+        <strong>Proof of consent:</strong>
+        <p>Participation is restricted to manually approved internal pilot users. Consent is tied to explicit administrator approval and allowlist enrollment before any messaging workflow can begin.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Sample messages</h2>
+      <div class="mini">
+        <h3>Inbound user request</h3>
+        <p><code>report nvidia santa clara ae</code></p>
+      </div>
+      <div class="mini" style="margin-top: 12px;">
+        <h3>Outbound confirmation example</h3>
+        <p>Tektronix pilot: your due diligence request for NVIDIA Santa Clara has been received and queued for processing. The completed report will be sent to your authorized Tektronix email. Reply STOP to opt out. Reply HELP for help.</p>
+      </div>
+      <div class="mini" style="margin-top: 12px;">
+        <h3>Outbound completion example</h3>
+        <p>Tektronix pilot: your due diligence report is ready and has been sent to your Tektronix email. Reply STOP to opt out. Reply HELP for help.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Compliance and controls</h2>
+      <ul>
+        <li>Only authorized internal pilot users may participate.</li>
+        <li>Unknown or inactive numbers are denied automatically.</li>
+        <li>Messages are one-to-one and request-driven.</li>
+        <li>No public marketing or list growth activity is performed.</li>
+        <li>Reply <code>STOP</code> to opt out and <code>HELP</code> for help.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Contact</h2>
+      <p>Program contact: <a href="mailto:dkahrs@tek.com">dkahrs@tek.com</a></p>
+      <p>This page is hosted only to document the messaging use case and consent approach for toll-free verification review.</p>
+    </section>
+  </div>
+</body>
+</html>
